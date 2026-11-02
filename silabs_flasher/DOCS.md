@@ -21,13 +21,13 @@ SkyConnect/ZBT-1 or other USB based wireless adapters).
 
 App configuration:
 
-| Configuration       | Description                                            |
-|---------------------|--------------------------------------------------------|
-| device (mandatory)  | Serial service where the Silicon Labs radio is attached |
-| bootloader_baudrate | Serial port baudrate for gecko bootloader (depends on firmware)   |
-| ezsp_baudrate       | Serial port baudrate for ezsp (depends on firmware)   |
+| Configuration       | Description                                                      |
+| ------------------- | ---------------------------------------------------------------- |
+| device (mandatory)  | Serial service where the Silicon Labs radio is attached          |
+| bootloader_baudrate | Serial port baudrate for gecko bootloader (depends on firmware)  |
+| ezsp_baudrate       | Serial port baudrate for ezsp (depends on firmware)              |
 | flow_control        | If hardware flow control should be enabled (depends on firmware) |
-| firmware_url        | Custom URL to flash firmware from                      |
+| firmware_url        | Custom URL to flash firmware from                                |
 
 ## Support
 
@@ -44,4 +44,4 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
 [reddit]: https://reddit.com/r/homeassistant
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-silabs-flasher/issues

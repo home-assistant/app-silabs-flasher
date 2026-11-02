@@ -1,9 +1,8 @@
-ARG BUILD_FROM
-ARG BUILD_ARCH
+ARG BUILD_FROM=ghcr.io/home-assistant/base-python:3.13-alpine3.23
 
 FROM $BUILD_FROM
 
-ARG UNIVERSAL_SILABS_FLASHER
+ARG UNIVERSAL_SILABS_FLASHER=0.0.37
 
 RUN \
     set -x \
@@ -20,3 +19,9 @@ COPY rootfs /
 # use s6-overlay as init system
 WORKDIR /
 ENTRYPOINT ["/init"]
+
+LABEL \
+    org.opencontainers.image.title="Home Assistant App: Silicon Labs Flasher" \
+    org.opencontainers.image.description="Silicon Labs firmware flasher add-on" \
+    org.opencontainers.image.source="https://github.com/home-assistant/app-silabs-flasher" \
+    org.opencontainers.image.licenses="Apache License 2.0"
