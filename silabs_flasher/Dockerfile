@@ -3,7 +3,7 @@ ARG BUILD_FROM=ghcr.io/home-assistant/base-python:3.13-alpine3.23-2026.11.0@sha2
 
 FROM $BUILD_FROM
 
-ARG UNIVERSAL_SILABS_FLASHER=0.0.37
+ARG UNIVERSAL_SILABS_FLASHER=0.1.3
 
 RUN \
     set -x \
