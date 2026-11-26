@@ -23,6 +23,6 @@ ENTRYPOINT ["/init"]
 
 LABEL \
     org.opencontainers.image.title="Home Assistant App: Silicon Labs Flasher" \
-    org.opencontainers.image.description="Silicon Labs firmware flasher add-on" \
+    org.opencontainers.image.description="Silicon Labs firmware flasher app" \
     org.opencontainers.image.source="https://github.com/home-assistant/app-silabs-flasher" \
     org.opencontainers.image.licenses="Apache License 2.0"
