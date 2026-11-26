@@ -10,6 +10,8 @@ set -e
 declare device
 declare firmware_url
 declare exit_status
+declare options
+declare old_key
 declare -a flasher_args=()
 
 function cleanup() {
@@ -42,6 +44,15 @@ function is_home_assistant_yellow {
     done
     return 1
 }
+
+# Delete old options
+options=$(bashio::app.options)
+for old_key in 'bootloader_baudrate' 'ezsp_baudrate' 'flow_control'; do
+    if bashio::jq.exists "${options}" ".${old_key}"; then
+        bashio::log.info "Removing ${old_key}"
+        bashio::app.option "${old_key}"
+    fi
+done
 
 if ! bashio::config.has_value 'device'; then
     bashio::exit.nok "No device selected, set the 'device' option."
