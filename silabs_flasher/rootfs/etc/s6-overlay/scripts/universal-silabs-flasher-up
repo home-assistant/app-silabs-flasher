@@ -95,5 +95,13 @@ if bashio::config.has_value 'profile'; then
 fi
 
 bashio::log.info "Starting universal-silabs-flasher with ${device} and firmware ${firmware_url}"
-universal-silabs-flasher "${flasher_args[@]}"
+
+# The flasher draws a progress bar that redraws itself in place using carriage
+# returns. Make it print a plain line every few seconds instead, so the
+# progress is readable in the app log.
+export TQDM_MININTERVAL=5
+export TQDM_BAR_FORMAT=$'{desc}: {n_fmt}{unit}\n'
+
+set -o pipefail
+universal-silabs-flasher "${flasher_args[@]}" 2>&1 | tr -d '\r'
 bashio::log.info "Flashing completed successfully"
