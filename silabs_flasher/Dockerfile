@@ -1,5 +1,5 @@
 # Base image updated by Renovate, update versionCompatibility on Alpine base bump
-ARG BUILD_FROM=ghcr.io/home-assistant/base-python:3.13-alpine3.23-2026.11.1@sha256:f2df308236e69c363fb9cb280d6785fc2dc2a9844c6b38c65ba013608fdffe01
+ARG BUILD_FROM=ghcr.io/home-assistant/base-python:3.14-alpine3.24-2026.11.1@sha256:46e6dcc59946421e1b6e3736cde545dab88d53f72654824230a38cbbaf0088ab
 
 FROM $BUILD_FROM
 
